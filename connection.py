@@ -9,3 +9,10 @@ class serverConnection:
         self.server_port = port
         self.address = (self.server_ip, self.server_port)
         self.socket.bind(self.address)
+
+    def Listen (self, backlog = 5):
+        self.socket.listen(backlog)
+
+    def AcceptConnection (self):
+        self.client_conn, self.client_address = self.socket.accept()
+        return (self.client_conn, self.client_address)
