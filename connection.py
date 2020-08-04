@@ -15,7 +15,7 @@ class serverConnection:
 
     def AcceptConnection (self):
         self.client_conn, self.client_address = self.socket.accept()
-        print("[+] Connection Established With" + self.client_address[0] + "On Port" + self.client_address[1])
+        print('[+] Connection Established With {} On Port {}'.format(self.client_address[0],self.client_address[1]))
         return (self.client_conn, self.client_address)
 
     def SendData (self, user_input):
